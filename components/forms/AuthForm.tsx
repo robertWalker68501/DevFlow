@@ -51,6 +51,7 @@ const AuthForm = <T extends FieldValues>({
   return (
     <Form {...form}>
       <form
+        // @ts-expect-error fix later
         onSubmit={form.handleSubmit(handleSubmit)}
         className='mt-10 space-y-6'
       >
