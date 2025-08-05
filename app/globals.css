@@ -437,6 +437,36 @@
   }
 }
 
+.toast-error {
+  font-style: italic;
+  font-size: 18px;
+  color: white;
+  background-color: #fb2c36;
+  border: 2px solid #fb2c36;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.toast-success {
+  font-style: italic;
+  font-size: 18px;
+  color: white;
+  background-color: #00c951;
+  border: 2px solid #00c951;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.toast-info {
+  font-style: italic;
+  font-size: 18px;
+  color: white;
+  background-color: #2b7fff;
+  border: 2px solid #2b7fff;
+  border-radius: 8px;
+  padding: 10px;
+}
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 3px;
   height: 3px;
