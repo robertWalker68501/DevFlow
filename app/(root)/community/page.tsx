@@ -1,7 +1,7 @@
 const Community = () => {
   return (
     <div>
-      <h1>Community</h1>
+      <h1 className='text-2xl'>Community</h1>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 const Collections = () => {
   return (
     <div>
-      <h1>Collections</h1>
+      <h1 className='text-2xl'>Collections</h1>
     </div>
   );
 };

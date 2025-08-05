@@ -1,7 +1,7 @@
 const FindJobs = () => {
   return (
     <div>
-      <h1>Find Jobs</h1>
+      <h1 className='text-2xl'>Find Jobs</h1>
     </div>
   );
 };

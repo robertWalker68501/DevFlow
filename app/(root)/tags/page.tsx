@@ -1,7 +1,7 @@
 const Tags = () => {
   return (
     <div>
-      <h1>Tags</h1>
+      <h1 className='text-2xl'>Tags</h1>
     </div>
   );
 };
