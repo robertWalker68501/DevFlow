@@ -24,8 +24,15 @@ const eslintConfig = [
       // though typically eslint-plugin-prettier handles this.
       // "prettier/prettier": "error",
     },
+    // overrides: [
+    //   {
+    //     files: ['*.ts', '*.tsx'],
+    //     rules: {
+    //       'no-undef': 'off',
+    //     },
+    //   },
+    // ],
   }),
 ];
 
 export default eslintConfig;
-
