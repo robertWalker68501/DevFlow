@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import ROUTES from '@/constants/routes';
 import HomeFilter from '@/components/filters/HomeFilter';
 import QuestionCard from '@/components/cards/QuestionCard';
+import { auth } from '@/auth';
 // import handleError from '@/lib/handlers/error';
 // import { api } from '@/lib/api';
 
@@ -64,6 +65,9 @@ interface SearchParams {
 const Home = async ({ searchParams }: SearchParams) => {
   // const users = await test();
   // console.log(users);
+
+  const session = await auth();
+  console.log('Session: ', session);
 
   const { query = '', filter = '' } = await searchParams;
 
