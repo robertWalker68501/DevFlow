@@ -2,6 +2,7 @@
 
 import AuthForm from '@/components/forms/AuthForm';
 import { SignUpSchema } from '@/lib/validations';
+import { signUpWithCredentials } from '@/lib/actions/auth.action';
 
 const SignUpPage = () => {
   return (
@@ -14,7 +15,7 @@ const SignUpPage = () => {
         name: '',
         username: '',
       }}
-      onSubmit={(data) => Promise.resolve({ success: true, data })}
+      onSubmit={signUpWithCredentials}
     />
   );
 };
