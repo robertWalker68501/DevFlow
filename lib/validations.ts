@@ -2,8 +2,9 @@ import { z } from 'zod';
 
 export const SignInSchema = z.object({
   email: z
-    .email({ message: 'Please provide a valid email address.' })
-    .min(1, { message: 'Email is required' }),
+    .string()
+    .min(1, { message: 'Email is required' })
+    .email({ message: 'Please provide a valid email address.' }),
 
   password: z
     .string()
@@ -29,8 +30,9 @@ export const SignUpSchema = z.object({
     }),
 
   email: z
-    .email({ message: 'Please provide a valid email address.' })
-    .min(1, { message: 'Email is required.' }),
+    .string()
+    .min(1, { message: 'Email is required.' })
+    .email({ message: 'Please provide a valid email address.' }),
 
   password: z
     .string()
@@ -54,7 +56,7 @@ export const AskQuestionSchema = z.object({
     .min(5, { message: 'Title is required.' })
     .max(100, { message: 'Title cannot exceed 100 characters.' }),
 
-  content: z.string().min(1, { message: 'Content is required.' }),
+  content: z.string().min(1, { message: 'Body is required.' }),
   tags: z
     .array(
       z
@@ -71,18 +73,21 @@ export const UserSchema = z.object({
   username: z
     .string()
     .min(3, { message: 'Username must be at least 3 characters long.' }),
-  email: z.email({ message: 'Please provide a valid email address.' }),
+  email: z.string().email({ message: 'Please provide a valid email address.' }),
   bio: z.string().optional(),
-  image: z.url({ message: 'Please provide a valid URL.' }).optional(),
+  image: z.string().url({ message: 'Please provide a valid URL.' }).optional(),
   location: z.string().optional(),
-  portfolio: z.url({ message: 'Please provide a valid URL.' }).optional(),
+  portfolio: z
+    .string()
+    .url({ message: 'Please provide a valid URL.' })
+    .optional(),
   reputation: z.number().optional(),
 });
 
 export const AccountSchema = z.object({
   userId: z.string().min(1, { message: 'User ID is required.' }),
   name: z.string().min(1, { message: 'Name is required.' }),
-  image: z.url({ message: 'Please provide a valid URL.' }).optional(),
+  image: z.string().url({ message: 'Please provide a valid URL.' }).optional(),
   password: z
     .string()
     .min(6, { message: 'Password must be at least 6 characters long.' })
@@ -114,7 +119,9 @@ export const SignInWithOAuthSchema = z.object({
     username: z
       .string()
       .min(3, { message: 'Username must be at least 3 characters long.' }),
-    email: z.email({ message: 'Please provide a valid email address.' }),
-    image: z.url('Invalid image URL').optional(),
+    email: z
+      .string()
+      .email({ message: 'Please provide a valid email address.' }),
+    image: z.string().url('Invalid image URL').optional(),
   }),
 });
