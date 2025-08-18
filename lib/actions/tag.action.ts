@@ -4,6 +4,7 @@ import handleError from '@/lib/handlers/error';
 import { FilterQuery } from 'mongoose';
 import { Tag } from '@/database';
 
+// Gat all tags with pagination and filtering
 export const getTags = async (
   params: PaginatedSearchParams
 ): Promise<ActionResponse<{ tags: Tag[]; isNext: boolean }>> => {
